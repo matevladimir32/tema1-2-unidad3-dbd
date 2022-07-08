@@ -1,0 +1,122 @@
+<!doctype html>
+<html lang="es">
+<head>
+<link rel="stylesheet" type="text/css" href="base.css" />
+<link rel="stylesheet" type="text/css" href="exe_highlighter.css" />
+<link rel="stylesheet" type="text/css" href="content.css" />
+<link rel="stylesheet" type="text/css" href="nav.css" />
+<meta http-equiv="content-type" content="text/html;  charset=utf-8" />
+<title>3. Lenguaje Formal de Consultas: Comando SELECT | Lenguaje e interfaz de una BD, Lenguaje formal de consultas SQL y Comandos SQL </title>
+<link rel="shortcut icon" href="favicon.ico" type="image/x-icon" />
+<meta name="author" content="Eduvirtual UNAB" />
+<link rel="license" type="text/html" href="http://creativecommons.org/licenses/by-sa/4.0/" />
+<meta name="generator" content="eXeLearning 2.6 - exelearning.net" />
+<!--[if lt IE 9]><script type="text/javascript" src="exe_html5.js"></script><![endif]-->
+<script type="text/javascript" src="exe_jquery.js"></script>
+<script type="text/javascript" src="exe_highlighter.js"></script>
+<script type="text/javascript" src="common_i18n.js"></script>
+<script type="text/javascript" src="common.js"></script>
+<meta name="viewport" content="width=device-width, initial-scale=1" />
+</head>
+<body class="exe-web-site" id="exe-node-3"><script type="text/javascript">document.body.className+=" js"</script>
+<div id="content">
+<p id="skipNav"><a href="#main" class="sr-av">Saltar la navegación</a></p>
+<header id="header" ><div id="headerContent">Lenguaje e interfaz de una BD, Lenguaje formal de consultas SQL y Comandos SQL</div></header>
+<nav id="siteNav">
+<ul>
+   <li><a href="index.html" class="daddy main-node">Inicio</a></li>
+   <li><a href="1_introduccin.html" class="no-ch">1. Introducción</a></li>
+   <li><a href="2_lenguaje_e_interfaz_de_una_bd.html" class="no-ch">2. Lenguaje e Interfaz de una BD</a></li>
+   <li id="active"><a href="3_lenguaje_formal_de_consultas_comando_select.html" class="active no-ch">3. Lenguaje Formal de Consultas: Comando SELECT</a></li>
+   <li><a href="4_lenguaje_formal_de_consultas_comando_insert.html" class="no-ch">4. Lenguaje Formal de Consultas: Comando INSERT</a></li>
+   <li><a href="5_lenguaje_formal_de_consultas_comando_delete.html" class="no-ch">5. Lenguaje Formal de Consultas: Comando DELETE</a></li>
+   <li><a href="6_lenguaje_formal_de_consultas_comando_update.html" class="no-ch">6. Lenguaje Formal de Consultas: Comando UPDATE</a></li>
+   <li><a href="7_conclusiones_y_referencias.html" class="no-ch">7. Conclusiones y Referencias</a></li>
+   <li><a href="8_repasando.html" class="no-ch">8. Repasando</a></li>
+</ul>
+</nav>
+<div id='topPagination'>
+<nav class="pagination noprt">
+<a href="2_lenguaje_e_interfaz_de_una_bd.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_lenguaje_formal_de_consultas_comando_insert.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+<div id="main-wrapper">
+<section id="main">
+<header id="nodeDecoration"><h1 id="nodeTitle">3. Lenguaje Formal de Consultas: Comando SELECT</h1></header>
+<article class="iDevice_wrapper FreeTextIdevice" id="id6">
+<div class="iDevice emphasis0">
+<div id="ta6_86" class="block iDevice_content">
+<p><img src="3.png" alt="" width="4044" height="1024" /></p>
+</div>
+</div>
+</article>
+<article class="iDevice_wrapper textIdevice em_iDevice" id="id7">
+<div class="iDevice emphasis1" >
+<header class="iDevice_header iDevice_header_noIcon"><h1 class="iDeviceTitle">Contenido</h1></header>
+<div class="iDevice_inner">
+<div class="iDevice_content_wrapper">
+<div id="ta7_120_2" class="block iDevice_content">
+<div class="exe-text"><p>La sentencia SELECT sirve para recuperar información en SQL, es decir, permite obtener registros de la base de datos, de una o varias tablas combinadas. Además, permite hacer filtrados de la información, para obtener únicamente los registros que cumplen ciertas condiciones.</p>
+<p>Su sintaxis, más simplificada, es la siguiente:</p>
+<div class="highlighted-code code-style-2 language-sql line-numbers">
+<div>
+<pre><code>SELECT * FROM tabla</code></pre>
+</div>
+</div>
+<p>Esta sentencia SQL nos permite recuperar todos los campos (columnas) de una tabla en concreto. El asterisco "*" indica que se quieren recuperar todos los campos y "tabla" es el nombre de la tabla que se desea acceder.</p>
+<p>Ejemplo si se cuenta con la tabla siguiente:</p>
+<p><img src="select1.png" alt="" width="225" height="173" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>La consulta seria:</p>
+<div class="highlighted-code code-style-2 language-sql line-numbers">
+<div>
+<pre><code>SELECT * FROM ALUMNO</code></pre>
+</div>
+</div>
+<p>El resultado de la consulta es:</p>
+<p><img src="select2.png" alt="" width="620" height="152" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>Se puede indicar que recupere solo algunos campos en concreto, indicando cuáles son, separados por comas. Por ejemplo, podemos indicar que se desean recuperar solamente las columnas "nombre" y "email" de la tabla de usuarios, de esta manera:</p>
+<div class="highlighted-code code-style-2 language-sql line-numbers">
+<div>
+<pre><code>select Codigo, Nombre from ALUMNO</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="select3.png" alt="" width="219" height="154" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>Además, podemos usar condiciones en la búsqueda con la cláusula WHERE, indicando qué tipo de registros se desea obtener como respuesta.</p>
+<div class="highlighted-code code-style-2 language-sql line-numbers">
+<div>
+<pre><code>select * from ALUMNO where Nombre = 'MARIA VERONICA'</code></pre>
+</div>
+</div>
+<p>Resultado:</p>
+<p><img src="select4.png" alt="" width="606" height="73" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>Esa sentencia recupera solamente aquellos registros de la tabla usuarios donde la columna "Nombre" sea igual a "MARIA VERONICA".</p>
+<p>Con el comando SELECT puede obtenerse:</p>
+<ul>
+<li>Consulta de una o varias tablas.</li>
+<li>Consultarse filtrando registros o columnas.</li>
+<li>Agrupar registros.</li>
+<li>Unir campos como si fuese uno mismo.</li>
+<li>Unir diversos comandos SELECT.</li>
+</ul>
+<p>Además, el comando SELECT puede usarse para consultas donde los campos mostrados pertenecen a tablas diferentes. Ejemplo: si se cuenta con la siguiente estructura de tablas:</p>
+<p><img src="select5.png" alt="" width="393" height="154" style="display: block; margin-left: auto; margin-right: auto;" /></p>
+<p>Se desea crear una consulta que muestre el nombre de los productos, las existencias y su respectiva categoría.</p>
+<p><img src="select6.png" alt="" width="835" height="182" style="display: block; margin-left: auto; margin-right: auto;" /></p></div>
+</div>
+</div>
+</div>
+</div>
+</article>
+<div id="packageLicense" class="cc cc-by-sa">
+<p><span>Obra publicada con</span> <a rel="license" href="http://creativecommons.org/licenses/by-sa/4.0/">Licencia Creative Commons Reconocimiento Compartir igual 4.0</a></p>
+</div>
+</section>
+</div>
+<div id='bottomPagination'>
+<nav class="pagination noprt">
+<a href="2_lenguaje_e_interfaz_de_una_bd.html" class="prev"><span><span>&laquo; </span>Anterior</span></a> <span class="sep">| </span><a href="4_lenguaje_formal_de_consultas_comando_insert.html" class="next"><span>Siguiente<span> &raquo;</span></span></a>
+</nav>
+</div>
+</div>
+<script type="text/javascript" src="_adultos_js.js"></script></body></html>
